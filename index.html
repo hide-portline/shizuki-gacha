@@ -18,6 +18,7 @@
 <script src="./support.js"></script>
 </head>
 <body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#9ECBFF"/><circle cx="100" cy="92" r="42" fill="#fff"/><text x="100" y="104" font-family="sans-serif" font-size="34" font-weight="700" fill="#33424F" text-anchor="middle">SG</text><text x="100" y="160" font-family="sans-serif" font-size="20" font-weight="700" fill="#33424F" text-anchor="middle">SHIZUKI</text></svg></template>
 <x-dc>
 <helmet>
 
@@ -175,7 +176,7 @@
     <div style="position:absolute; bottom:-140px; right:38%; width:300px; height:300px; border-radius:50%; background:#F6FDEC; animation:drift2 13s ease-in-out infinite; pointer-events:none"></div>
 
     <div data-hero-circle="1" style="position:absolute; top:50%; right:clamp(-230px,-13vw,-60px); width:min(94vh,52vw,880px); aspect-ratio:1/1; transform:translateY(-50%); border-radius:50%; overflow:hidden; background:#F0F7FF">
-      <div data-parallax="0.06" style="position:absolute; inset:-8% 0"><img src="assets/hero.png" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:62.4% 50%"></div>
+      <div data-parallax="0.06" style="position:absolute; inset:0"><img data-adjust="hero" src="assets/hero.png" alt="" style="display:block; width:100%; height:100%; object-fit:contain; object-position:{{ heroPos }}; transform:scale({{ heroScale }})"></div>
     </div>
     <div data-hero-dot="1" style="position:absolute; top:15%; right:33%; width:64px; height:64px; border-radius:50%; animation:bob 7s ease-in-out infinite, bghue 9s linear infinite; pointer-events:none"></div>
     <div data-hero-dot="1" style="position:absolute; bottom:17%; right:45%; width:92px; height:92px; border-radius:50%; background:#FFE39C; animation:bob 6s ease-in-out infinite reverse; pointer-events:none"></div>
@@ -326,7 +327,7 @@
           </div>
           <div style="display:flex; align-items:center; gap:9px; margin-top:14px">
             <span style="width:8px; height:8px; border-radius:50%; background:#FFB7C3"></span>
-            <h3 style="margin:0; font-size:15px; font-weight:900; line-height:1.6; color:#33424F">しづき神社</h3>
+            <h3 style="margin:0; font-size:15px; font-weight:900; line-height:1.6; color:#33424F">志筑神社</h3>
           </div>
         </a>
         <a href="{{ videoUrl2 }}" target="_blank" rel="noopener" data-r="video-card" style="{{ videoCardStyle }}">
@@ -366,7 +367,7 @@
           </div>
           <div style="display:flex; align-items:center; gap:9px; margin-top:14px">
             <span style="width:8px; height:8px; border-radius:50%; background:#FFB7C3"></span>
-            <h3 style="margin:0; font-size:15px; font-weight:900; line-height:1.6; color:#33424F">しづき八幡神社</h3>
+            <h3 style="margin:0; font-size:15px; font-weight:900; line-height:1.6; color:#33424F">志筑八幡神社</h3>
           </div>
         </a>
         <a href="{{ videoUrl6 }}" target="_blank" rel="noopener" data-r="video-card" style="{{ videoCardStyle }}">
@@ -442,7 +443,7 @@
         <div data-reveal="4" style="position:relative">
           <div aria-hidden="true" style="position:absolute; inset:-16px -16px auto auto; width:clamp(80px,10vw,130px); height:clamp(80px,10vw,130px); border-radius:50%; background:#FFB7C3; animation:drift2 13s ease-in-out infinite; pointer-events:none"></div>
           <div style="position:relative; border-radius:clamp(26px,3.2vw,40px); overflow:hidden; background:#F0F7FF; aspect-ratio:4/3; box-shadow:0 26px 56px rgba(51,66,79,0.18); transform:rotate(-2.5deg)">
-            <img src="assets/slots/v3-gacha-visual.webp" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 50%;">
+            <img src="assets/slots/v3-gacha-visual-2.png" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 50%;">
           </div>
           <div aria-hidden="true" style="position:absolute; left:-18px; bottom:-22px; width:clamp(64px,7vw,96px); height:clamp(64px,7vw,96px); border-radius:50%; background:#9ECBFF; animation:drift 14s ease-in-out infinite; pointer-events:none"></div>
         </div>
@@ -458,14 +459,6 @@
       <p data-reveal="3" style="margin:0 0 clamp(26px,4vh,44px); max-width:32em; font-size:clamp(14px,1.4vw,16px); line-height:2; color:#5A6B7F">しづきのお店やスポット、伝統をキーホルダーに。</p>
     </div>
     <div data-reveal="3" data-r="lineup-list" data-open="{{ lineupOpenFlag }}" style="{{ lineupListStyle }}">
-        <article data-r="lineup-card" style="{{ lineupCardStyle }}">
-          <div style="background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 2px 12px rgba(12,35,64,0.08)">
-            <div style="aspect-ratio:1/1; margin:22px 22px 0; border-radius:50%; overflow:hidden; background:#F0F7FF"><img src="assets/slots/v3-gacha-01.webp" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 50%;"></div>
-            <div style="padding:18px 26px 26px; text-align:center">
-              <h3 style="margin:0; font-size:16px; font-weight:900; color:#33424F">アクリルキーホルダー</h3>
-            </div>
-          </div>
-        </article>
         <article data-r="lineup-card" style="{{ lineupCardStyle }}">
           <div style="background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 2px 12px rgba(12,35,64,0.08)">
             <div style="aspect-ratio:1/1; margin:22px 22px 0; border-radius:50%; overflow:hidden; background:#F6FDEC"><img src="assets/slots/v3-gacha-02.webp" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 50%;"></div>
@@ -720,7 +713,7 @@
 
       <div style="max-width:min(100%,56em); margin-bottom:clamp(44px,7vh,80px)">
         <p data-reveal="3" style="margin:0 0 clamp(20px,3vh,30px); font-size:clamp(17px,2vw,24px); font-weight:900; line-height:1.8; color:#33424F">しづきには大型観光施設はない。</p>
-        <p data-reveal="4" data-r="nowrap-desktop" style="margin:0 0 clamp(20px,3vh,30px); font-size:clamp(9px,1.25vw,16px); line-height:2.1; white-space:nowrap; color:#5A6B7F">だからこそ、今ある店・人・場所・文化・風景・歴史などの魅力を見つめ直し、300円のガチャを入口に発信する。</p>
+        <p data-reveal="4" data-r="nowrap-desktop" style="margin:0 0 clamp(20px,3vh,30px); font-size:clamp(9px,1.25vw,16px); line-height:2.1; white-space:nowrap; color:#5A6B7F">だからこそ、今ある店・人・場所・文化・風景・歴史などの魅力を見つめ直し、300円のガチャを多くの人に発信する。</p>
         <p data-reveal="5" style="margin:0; font-size:clamp(14px,1.4vw,16px); line-height:2.1; color:#5A6B7F">観光客だけでなく、しづきに暮らす人や出身者にも「しづきって、いいじゃん」と感じてもらうことを目指しています。</p>
       </div>
 
@@ -731,11 +724,11 @@
           <div style="padding:20px 28px 30px; text-align:center">
             <div style="font-family:Montserrat,sans-serif; font-size:10px; font-weight:800; letter-spacing:0.18em; color:#33424F">PRODUCT</div>
             <h3 style="margin:8px 0; font-size:18px; font-weight:900; color:#33424F">ありりん</h3>
-            <p style="margin:0; font-size:13px; line-height:1.95; color:#5A6B7F">静岡県から淡路島に。<br>まちおこし協力隊として活動中。</p>
+            <p style="margin:0; font-size:13px; line-height:1.95; color:#5A6B7F">静岡県から淡路島に。<br>淡路市地域おこし協力隊として活動中。</p>
           </div>
         </div>
         <div data-reveal="7" data-order="3" style="background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 2px 12px rgba(12,35,64,0.08)">
-          <div data-clip="1" style="aspect-ratio:1/1; margin:26px 26px 0; border-radius:50%; overflow:hidden; background:#F6FDEC"><img src="assets/slots/v3-member-2.webp" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 17.8%;"></div>
+          <div data-clip="1" style="aspect-ratio:1/1; margin:26px 26px 0; border-radius:50%; overflow:hidden; background:#F6FDEC"><img src="assets/slots/v3-member-2c.png" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 45%;"></div>
           <div style="padding:20px 28px 30px; text-align:center">
             <div style="font-family:Montserrat,sans-serif; font-size:10px; font-weight:800; letter-spacing:0.18em; color:#33424F">PRODUCT</div>
             <h3 style="margin:8px 0; font-size:18px; font-weight:900; color:#33424F">まゆ</h3>
@@ -743,7 +736,7 @@
           </div>
         </div>
         <div data-reveal="8" data-order="4" style="background:#fff; border-radius:32px; overflow:hidden; box-shadow:0 2px 12px rgba(12,35,64,0.08)">
-          <div data-clip="1" style="aspect-ratio:1/1; margin:26px 26px 0; border-radius:50%; overflow:hidden; background:#FFFAEC"><img src="assets/slots/v3-member-3.webp" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 16.4%;"></div>
+          <div data-clip="1" style="aspect-ratio:1/1; margin:26px 26px 0; border-radius:50%; overflow:hidden; background:#FFFAEC"><img src="assets/slots/v3-member-3b.png" alt="" style="display:block; width:100%; height:100%; object-fit:cover; object-position:50% 46%;"></div>
           <div style="padding:20px 28px 30px; text-align:center">
             <div style="font-family:Montserrat,sans-serif; font-size:10px; font-weight:800; letter-spacing:0.18em; color:#33424F">PRODUCT</div>
             <h3 style="margin:8px 0; font-size:18px; font-weight:900; color:#33424F">きょうか</h3>
@@ -828,7 +821,7 @@
     <button type="button" onClick="{{ closeMap }}" aria-label="閉じる" style="position:fixed; top:clamp(14px,3vw,28px); right:clamp(14px,3vw,28px); width:48px; height:48px; border:none; border-radius:50%; background:#fff; color:#33424F; font-size:20px; font-weight:900; cursor:pointer">×</button>
   </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;heroFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Zen Kaku Gothic New&quot;,&quot;Kaisei Decol&quot;,&quot;Yusei Magic&quot;,&quot;Mochiy Pop One&quot;],&quot;default&quot;:&quot;Zen Kaku Gothic New&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;見出しフォント&quot;},&quot;gachaLocation&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;淡路市商工会 津名支部志筑地区&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;ガチャ&quot;},&quot;sheetPlacesUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;スプレッドシート&quot;},&quot;sheetMoviesUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;スプレッドシート&quot;},&quot;sheetLineupUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;スプレッドシート&quot;},&quot;movieSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;shizuki-movie.mp4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Movie&quot;},&quot;videoUrl1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/EQe5w2veZwE?si=B8vEXfokxt7kWpkj&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/57aCUjCokDs?si=zOJukHgBstEYcFQK&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl3&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/Q8q4ShTeHkk?si=cLcSsZn5tlydbcE7&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl4&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/Rct-rNeAXjY?si=tvdL-tfMGPeSn4Cs&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl5&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/RBtDL9vQel8?si=J_WfwsKtEUiv1OtN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl6&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/pcmPb-tO9uI?si=M-KplAcXgJGAPNz5&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroPosX&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;ヒーロー画像&quot;},&quot;heroPosY&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;ヒーロー画像&quot;},&quot;heroZoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:100,&quot;min&quot;:100,&quot;max&quot;:200,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;ヒーロー画像&quot;},&quot;heroFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Zen Kaku Gothic New&quot;,&quot;Kaisei Decol&quot;,&quot;Yusei Magic&quot;,&quot;Mochiy Pop One&quot;],&quot;default&quot;:&quot;Zen Kaku Gothic New&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;見出しフォント&quot;},&quot;gachaLocation&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;スーパーキンキ 志筑本店&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;ガチャ&quot;},&quot;sheetPlacesUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;スプレッドシート&quot;},&quot;sheetMoviesUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;スプレッドシート&quot;},&quot;sheetLineupUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;スプレッドシート&quot;},&quot;movieSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;shizuki-movie.mp4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Movie&quot;},&quot;videoUrl1&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/EQe5w2veZwE?si=B8vEXfokxt7kWpkj&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/57aCUjCokDs?si=zOJukHgBstEYcFQK&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl3&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/Q8q4ShTeHkk?si=cLcSsZn5tlydbcE7&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl4&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/Rct-rNeAXjY?si=tvdL-tfMGPeSn4Cs&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl5&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/RBtDL9vQel8?si=J_WfwsKtEUiv1OtN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;},&quot;videoUrl6&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/pcmPb-tO9uI?si=M-KplAcXgJGAPNz5&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;動画リンク&quot;}}">
 class Component extends DCLogic {
   state = { sent: false, message: "", videosOpen: false, lineupOpen: false, extraVideos: [], extraLineup: [], places: [], sending: false, status: "" };
 
@@ -1055,6 +1048,84 @@ class Component extends DCLogic {
       }
     };
     setupHero();
+
+    // ── 画像の位置調整パネル（URLに #adjust を付けると表示）
+    (() => {
+      const KEY = "shizuki-img-adjust";
+      const saved = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { return {}; } })();
+      const targets = q("[data-adjust]");
+      if (!targets.length) return;
+
+      const base = {};
+      targets.forEach(el => {
+        const k = el.dataset.adjust;
+        const op = getComputedStyle(el).objectPosition.split(" ");
+        const m = /scale\(([\d.]+)\)/.exec(el.style.transform || "");
+        base[k] = saved[k] || { x: parseFloat(op[0]) || 50, y: parseFloat(op[1]) || 50, z: m ? parseFloat(m[1]) : 1 };
+      });
+      const apply = k => {
+        const v = base[k];
+        targets.filter(el => el.dataset.adjust === k).forEach(el => {
+          el.style.objectPosition = v.x + "% " + v.y + "%";
+          el.style.transform = "scale(" + v.z + ")";
+        });
+      };
+      Object.keys(base).forEach(apply);
+
+      const wanted = () => location.hash.indexOf("adjust") >= 0;
+      let panel = null;
+      const build = () => {
+        panel = document.createElement("div");
+        panel.style.cssText = "position:fixed; z-index:99999; right:18px; bottom:18px; width:268px; padding:16px 18px 18px; border-radius:18px; background:#fff; border:1px solid #DCE7F3; box-shadow:0 18px 44px rgba(12,35,64,.22); font:400 12px/1.6 system-ui,sans-serif; color:#33424F";
+        const rows = Object.keys(base).map(k => {
+          const v = base[k];
+          return '<div style="margin-top:12px"><div style="font-weight:900; font-size:11px; letter-spacing:.06em; margin-bottom:6px">' + k.toUpperCase() + '</div>' +
+            ['x','y','z'].map(ax => {
+              const label = ax === 'x' ? '横位置' : ax === 'y' ? '縦位置' : '拡大';
+              const min = ax === 'z' ? 1 : 0, max = ax === 'z' ? 2.5 : 100, step = ax === 'z' ? 0.01 : 0.5;
+              return '<label style="display:grid; grid-template-columns:44px 1fr 46px; align-items:center; gap:8px; margin:4px 0">' +
+                '<span>' + label + '</span>' +
+                '<input type="range" data-k="' + k + '" data-ax="' + ax + '" min="' + min + '" max="' + max + '" step="' + step + '" value="' + v[ax] + '" style="width:100%">' +
+                '<output data-out="' + k + '-' + ax + '" style="text-align:right; font-weight:900">' + v[ax] + '</output></label>';
+            }).join('') + '</div>';
+        }).join('');
+        panel.innerHTML = '<div style="display:flex; align-items:center; justify-content:space-between"><strong style="font-size:13px">画像の位置調整</strong>' +
+          '<button type="button" data-act="close" style="border:0; background:#F2F5F8; border-radius:999px; width:24px; height:24px; cursor:pointer; font-weight:900">×</button></div>' +
+          rows +
+          '<div style="display:flex; gap:8px; margin-top:14px"><button type="button" data-act="reset" style="flex:1; height:34px; border:1px solid #DCE7F3; background:#fff; border-radius:999px; cursor:pointer; font-weight:900; font-size:12px">リセット</button>' +
+          '<button type="button" data-act="copy" style="flex:1; height:34px; border:0; background:#33424F; color:#fff; border-radius:999px; cursor:pointer; font-weight:900; font-size:12px">値をコピー</button></div>' +
+          '<div data-note style="margin-top:8px; font-size:11px; color:#5A6B7F">この値を伝えてもらえれば公開ページに反映します。</div>';
+        document.body.appendChild(panel);
+
+        panel.addEventListener("input", e => {
+          const inp = e.target;
+          if (inp.tagName !== "INPUT") return;
+          const k = inp.dataset.k, ax = inp.dataset.ax;
+          base[k][ax] = parseFloat(inp.value);
+          const out = panel.querySelector('[data-out="' + k + '-' + ax + '"]');
+          if (out) out.textContent = inp.value;
+          apply(k);
+          try { localStorage.setItem(KEY, JSON.stringify(base)); } catch (err) {}
+        });
+        panel.addEventListener("click", e => {
+          const act = e.target.dataset && e.target.dataset.act;
+          if (!act) return;
+          if (act === "close") { panel.remove(); panel = null; }
+          if (act === "reset") { try { localStorage.removeItem(KEY); } catch (err) {} location.reload(); }
+          if (act === "copy") {
+            const txt = Object.keys(base).map(k => k + ": X " + base[k].x + "% / Y " + base[k].y + "% / 拡大 " + Math.round(base[k].z * 100) + "%").join("\n");
+            const note = panel.querySelector("[data-note]");
+            if (navigator.clipboard) navigator.clipboard.writeText(txt).catch(() => {});
+            if (note) note.textContent = txt;
+          }
+        });
+      };
+      if (wanted()) build();
+      window.addEventListener("hashchange", () => {
+        if (wanted() && !panel) build();
+        else if (!wanted() && panel) { panel.remove(); panel = null; }
+      });
+    })();
     if (circle && !isNarrow()) {
       circle.style.clipPath = "circle(0% at 50% 50%)";
       circle.style.transition = `clip-path 1300ms ${EASE} 200ms`;
@@ -1131,6 +1202,8 @@ class Component extends DCLogic {
         if (cur.includes(topic)) return;
         this.setState({ message: cur ? `${cur}\n${topic}：` : `${topic}：` });
       },
+      heroPos: `${this.props.heroPosX ?? 50}% ${this.props.heroPosY ?? 50}%`,
+      heroScale: (this.props.heroZoom ?? 100) / 100,
       heroFontStyle: (() => {
         const f = this.props.heroFont || "Zen Kaku Gothic New";
         const weights = { "Zen Kaku Gothic New": 900, "Kaisei Decol": 700, "Yusei Magic": 400, "Mochiy Pop One": 400 };
@@ -1140,8 +1213,8 @@ class Component extends DCLogic {
           fontSize: "min(7.6vw,126px)", lineHeight: 1.14, letterSpacing: "0.01em", color: "#33424F", whiteSpace: "nowrap"
         };
       })(),
-      lineupCount: 11 + this.state.extraLineup.length,
-      places: this.state.places.length ? this.state.places : [{ name: this.props.gachaLocation || "淡路市商工会 津名支部志筑地区", note: "" }],
+      lineupCount: 10 + this.state.extraLineup.length,
+      places: this.state.places.length ? this.state.places : [{ name: this.props.gachaLocation || "スーパーキンキ 志筑本店", note: "随時お知らせします。" }],
       placeCount: this.state.places.length || 1,
       year: new Date().getFullYear(),
       instagramUrl: this.props.instagramUrl || "https://www.instagram.com/shizukichikushokokai/",
